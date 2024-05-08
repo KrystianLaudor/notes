@@ -1,0 +1,23 @@
+table {
+  width: 100%;
+  font-family: Arial, sans-serif;
+}
+
+thead tr {
+  background-color: #dfdfdf;
+}
+
+td {
+  padding: 10px;
+  text-align: left;
+  border: 1px solid #ddd;
+}
+
+td {
+  padding: 10px;
+  border: 1px solid #ddd;
+}
+
+tr:nth-child(odd) {
+  background-color: #f9f9f9;
+}

@@ -1,0 +1,31 @@
+<div className="justifyView"></div>
+<table>
+  <thead>
+    <tr>
+      <td *ngFor="let note_th of headers">
+        <span class="theader">{{ note_th }}</span>
+      </td>
+    </tr>
+  </thead>
+  <tr *ngFor="let note of noteList">
+    <td>
+      <span class="tbody">{{ note.title }}</span>
+    </td>
+    <td>
+      <span class="tbody">{{ note.category }}</span>
+    </td>
+    <td>
+      <span class="tbody" *ngIf="note.content.length <= 50">{{ note.content }}</span>
+      <span class="tbody" *ngIf="note.content.length > 50">{{ note.getShortContent(50) }}</span>
+    </td>
+    <td>
+      <span class="tbody">{{ note.Date }}</span>
+    </td>
+    <td>
+      <span class="tbody">{{ note.time }}</span>
+    </td>
+    <td>
+      <span class="tbody">{{ note.status }}</span>
+    </td>
+  </tr>
+</table>
