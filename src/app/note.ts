@@ -6,7 +6,8 @@ export class Note {
     public content: string,
     public date: Date,
     public time?: string,
-    public status?: boolean) {
+    public status?: boolean,
+    public isSelected: boolean = false) {
   }
   get Date(): string {
     let returnDate = '';
@@ -21,7 +22,6 @@ export class Note {
     let year = this.date.getFullYear().toString()
     return returnDate = day + '-' + month + '-' + year;;
   }
-
   getShortContent(shortContent: number): string {
     return this.content.substring(0, shortContent) + '...';
   }

@@ -14,20 +14,33 @@ export class NotesComponent implements OnInit {
 
   noteList = Notes;
   headers: string[] = [];
-
+  selectedNote: Note | null = null;
+ 
   constructor() {
     this.noteList.forEach(element => {
       const keys = Object.keys(element);
       keys.forEach(key => {
-        if (!this.headers.includes(key)) {
-          this.headers.push(key);
+        if (key !== 'isSelected') {
+          if (!this.headers.includes(key)) {
+            this.headers.push(key);
+          }
         }
       })
     })
   }
 
-
   ngOnInit(): void {
+  }
 
+  toggleSelection(note: Note) {
+    if (this.selectedNote === note) {
+      note.isSelected = !note.isSelected;
+    } else {
+      if (this.selectedNote) {
+        this.selectedNote.isSelected = false;
+      }
+      note.isSelected = true;
+      this.selectedNote = note;
+    }
   }
 }

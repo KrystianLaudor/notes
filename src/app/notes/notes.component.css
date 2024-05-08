@@ -1,3 +1,11 @@
+
+.justifyView {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
 table {
   width: 100%;
   font-family: Arial, sans-serif;
@@ -18,6 +26,16 @@ td {
   border: 1px solid #ddd;
 }
 
-tr:nth-child(odd) {
-  background-color: #f9f9f9;
+.selected {
+  background-color: greenyellow;
 }
+
+.details {
+  margin: 50px;
+  font-size: x-large;
+  border: solid darkgreen 1px;
+  width: 50%;
+  padding: 1%;
+  border-radius: 16px;
+}
+
